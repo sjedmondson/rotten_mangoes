@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'pry'
 gem 'kaminari'
 gem 'rmagick'
 gem 'carrierwave'

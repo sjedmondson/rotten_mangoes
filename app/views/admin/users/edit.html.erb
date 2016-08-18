@@ -1,6 +1,6 @@
-<h1>Sign Up</h1>
+<h1>Admin Edit User</h1>
   
-<%= form_for @user do |f| %>
+<%= form_for @user, url: admin_user_path(@user) do |f| %>
 <% if @user.errors.any? %>
 <div>
   <%= pluralize(@user.errors.count, "error") %> prevented the account from being created:
@@ -31,6 +31,9 @@
   <%= f.label :password_confirmation %><br>
   <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
 </div>
+<div>
+  <p>Create user as admin?</p>
+  <%= f.check_box :admin, {}, checked_value = "true", unchecked_value = "false" %>
+</div>
 <div><%= f.submit "Submit" %></div>
 <% end %>
-
