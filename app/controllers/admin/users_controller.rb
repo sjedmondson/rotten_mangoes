@@ -1,5 +1,7 @@
 class Admin::UsersController < ApplicationController
 
+  before_action :set_user, only: [:edit, :update, :destroy]
+
   before_action do
     if current_user.admin == false || nil
       flash[:notice] = "Thou shalt not pass!"
@@ -25,11 +27,9 @@ class Admin::UsersController < ApplicationController
   end 
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       redirect_to admin_users_path(@user), notice: "User updated successfully"
     else
@@ -38,13 +38,16 @@ class Admin::UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
     @user.destroy
     UserMailer.goodbye_email(@user).deliver
     redirect_to admin_users_path, notice: "Successfully deleted #{@user.full_name}."
   end
 
   private
+
+  def set_user
+    @user = User.find(params[:id])
+  end
 
   def user_params
     params.require(:user).permit(:email, :firstname, :lastname, :password, :password_confirmation, :admin)
