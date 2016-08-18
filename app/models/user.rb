@@ -2,8 +2,6 @@ class User < ApplicationRecord
 
   has_many :reviews, :dependent => :destroy
 
-  #after_destroy :user_delete_notification
-
   has_secure_password
   validates :email, presence: true
   validates :firstname, presence: true
