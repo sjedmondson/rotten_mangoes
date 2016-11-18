@@ -1,3 +1,30 @@
-// Place all the styles related to the movies controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  color: #000000; 
+}
+
+#mainbackground {
+  background-image: url("explodingmango.png");
+}
+
+.centered {
+  text-align: center;
+}
+
+.jumbotron {
+  background: rgba(200, 54, 54, 0.5); 
+}
+
+.page-color {
+  background-color: #ffcd28;
+}
+
+.header-text {
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 80px;
+  color: green;
+  background: rgba(200, 54, 54, 0.5); 
+}
+
+.link-size {
+  font-size: 30px;
+}

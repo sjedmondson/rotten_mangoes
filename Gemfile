@@ -3,6 +3,7 @@ gem 'pry'
 gem 'kaminari'
 gem 'rmagick'
 gem 'carrierwave'
+gem 'font-awesome-sass'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use sqlite3 as the database for Active Record

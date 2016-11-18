@@ -1,5 +1,14 @@
-<%= link_to image_tag(movie.image_url(:thumb).to_s), movie_path(movie) %>
-<h2><%= link_to movie.title, movie_path(movie) %></h2>
-<h3>Release Date - <%= formatted_date(movie.release_date) %></h3>
-<h4>Dir. <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes | Average Rating: <%= movie.review_average %>/10</h4>
-<p><%= movie.description %></p>
+
+<div class="row">
+  <% movies_slice.each do |movie| %>
+    <div class="col-md-6">
+      <div class="jumbotron centered">
+        <%= link_to image_tag(movie.image_url(:thumb).to_s), movie_path(movie) %>
+        <h2><%= link_to movie.title, movie_path(movie) %></h2>
+        <h3>Release Date - <%= formatted_date(movie.release_date) %></h3>
+        <h4>Dir. <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes | Average Rating: <%= movie.review_average %>/10</h4>
+        <p><%= truncate(movie.description, length: 50) %></p>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,4 +1,5 @@
-<%= form_for @movie, :html => {:multipart => true} do |f| %>
+ 
+ <%= form_for @movie, :html => {:multipart => true} do |f| %>
   <% if @movie.errors.any? %>
     <div>
       <%= pluralize(@movie.errors.count, "error") %> prevented this movie from being submitted:

@@ -1,13 +1,22 @@
-<h1>Rotten Mangoes</h1>
+<div class="container">
+  <div class="container">
+    <div class="container-fluid page-header centered">
+      <h1 class="header-text">Rotten Mangoes</h1> 
+    </div>
 
-<p>Filter your search.</p>
+    <div class="jumbotron centered">
+    <%= render "form2" %>
+    <br>
+    <div class="centered link-size">
+    <%= link_to "Submit a movie!", new_movie_path %>
+    </div>
+    </div>
 
-<%= render 'form2' %>
 
-<div>
-<%= link_to "Submit a movie!", new_movie_path %>
-</div>
-
-<div>    
-<%= render @movies %>
+    <div>
+      <% @movies.each_slice(2) do |movies_slice| %>
+        <%= render "movie", movies_slice: movies_slice %>
+      <% end %>
+    </div>
+  </div>
 </div>

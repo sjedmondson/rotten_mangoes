@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
   <title>RottenMangoes</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body id="mainbackground" class="page-color">
+  <div class="container">
+    <%= render 'layouts/header' %>
+  </div> 
   <% flash.each do |key, value| %>
     <%= content_tag(:div, value) %>
   <% end %>
   <%= yield %>
-  <%= render 'layouts/footer' %>
 </body>
 </html>
